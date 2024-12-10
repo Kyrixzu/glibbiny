@@ -11749,7 +11749,7 @@ addcmd("walkfling", {}, function(args, speaker)
         end
 
         vel = root.Velocity
-        root.Velocity = vel * 5 + Vector3.new(0, 5, 0)
+        root.Velocity = vel * 5 + Vector3.new(5, 0, 0) -- Initial left/right push (X-axis)
 
         RunService.RenderStepped:Wait()
         if character and character.Parent and root and root.Parent then
@@ -11758,8 +11758,9 @@ addcmd("walkfling", {}, function(args, speaker)
 
         RunService.Stepped:Wait()
         if character and character.Parent and root and root.Parent then
-            root.Velocity = vel + Vector3.new(0, movel, 0)
-            movel = movel * -1
+            -- Alternate between left and right
+            root.Velocity = vel + Vector3.new(movel, 0, 0)
+            movel = movel * -1 -- Toggle direction
         end
     until walkflinging == false
 end)
