@@ -11749,7 +11749,7 @@ addcmd("walkfling", {}, function(args, speaker)
         end
 
         vel = root.Velocity
-        root.Velocity = vel * 100 + Vector3.new(100, 0, 0) -- Initial left/right push (X-axis)
+        root.Velocity = vel * 60 + Vector3.new(60, 0, 0) -- Initial left/right push (X-axis)
 
         RunService.RenderStepped:Wait()
         if character and character.Parent and root and root.Parent then
