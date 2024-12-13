@@ -4550,8 +4550,8 @@ CMDs[#CMDs + 1] = {NAME = 'fling', DESC = 'Flings anyone you touch'}
 CMDs[#CMDs + 1] = {NAME = 'unfling', DESC = 'Disables the fling command'}
 CMDs[#CMDs + 1] = {NAME = 'flyfling', DESC = 'Basically the invisfling command but not invisible'}
 CMDs[#CMDs + 1] = {NAME = 'unflyfling', DESC = 'Disables the flyfling command'}
-CMDs[#CMDs + 1] = {NAME = 'walkfling', DESC = 'Basically fling but no spinning'}
-CMDs[#CMDs + 1] = {NAME = 'unwalkfling / nowalkfling', DESC = 'Disables walkfling'}
+CMDs[#CMDs + 1] = {NAME = '', DESC = 'Basically fling but no spinning'}
+CMDs[#CMDs + 1] = {NAME = 'un / no', DESC = 'Disables '}
 CMDs[#CMDs + 1] = {NAME = 'invisfling', DESC = 'Enables invisible fling'}
 CMDs[#CMDs + 1] = {NAME = 'antifling', DESC = 'Disables player collisions to prevent you from being flung'}
 CMDs[#CMDs + 1] = {NAME = 'unantifling', DESC = 'Disables antifling'}
@@ -11749,7 +11749,7 @@ addcmd("walkfling", {}, function(args, speaker)
         end
 
         vel = root.Velocity
-        root.Velocity = vel * 27 + Vector3.new(27, 0, 0) -- Initial left/right push (X-axis)
+        root.Velocity = vel * 24 + Vector3.new(24, 0, 0) -- Initial left/right push (X-axis)
 
         RunService.RenderStepped:Wait()
         if character and character.Parent and root and root.Parent then
